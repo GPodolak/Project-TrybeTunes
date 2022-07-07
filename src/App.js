@@ -25,5 +25,5 @@ class App extends React.Component {
     );
   }
 }
-export default App;
 // teste
+export default App;
