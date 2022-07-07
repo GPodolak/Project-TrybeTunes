@@ -1,10 +1,10 @@
 import React from 'react';
 
-class album extends React.Component {
+class Album extends React.Component {
   render() {
     return (
       <div data-testid="page-album" />
     );
   }
 }
-export default album;
+export default Album;

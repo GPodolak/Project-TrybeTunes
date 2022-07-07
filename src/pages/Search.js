@@ -1,11 +1,12 @@
 import React from 'react';
+// import Header from './components/Header';
 // import App from "../App";
 
-class search extends React.Component {
+class Search extends React.Component {
   render() {
     return (
       <div data-testid="page-search" />
     );
   }
 }
-export default search;
+export default Search;
