@@ -1,7 +1,7 @@
 import React from 'react';
 
-class Heder extends React.Component {
+class Header extends React.Component {
 
 }
 
-export default Heder;
+export default Header;
