@@ -7,5 +7,20 @@ class Login extends React.Component {
     );
   }
 }
+handleClick = () => {
+  const { userLog } = this.state;
+  this.setState({ loading: true });
+  createUser({ name: userLog }).then(() => {
+    this.setState({ loading: false, redirectEnable: true });
+  });
+};
 
+handleInputChange = ({ target: { value } }) => {
+  const CARACTERS = 3;
+  const habiliteButton = value.length >= CARACTERS;
+  this.setState({
+    userLog: value,
+    clickLoginButtonDisabled: !habiliteButton,
+  });
+};
 export default Login;
