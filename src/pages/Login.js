@@ -54,7 +54,6 @@ class Login extends React.Component {
           >
             Entrar
           </button>
-          { /* operador ternario */ }
           { loading ? <p>Carregando...</p> : null }
           { redirectEnable ? <Redirect to="/search" /> : null}
         </form>
