@@ -44,10 +44,7 @@ class Header extends React.Component {
             <Link
               data-testid="link-to-profile"
               to="/profile"
-            >
-              Profile
-
-            </Link>
+            />
           </nav>
         </div>
       </header>
