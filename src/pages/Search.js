@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unused-state */
 // import { element } from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Components/Headers';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+
 // import Header from './components/Header';
 // import App from "../App";
 
@@ -10,7 +12,11 @@ class Search extends React.Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
       searchBand: '',
+      bandReturn: [],
+      albumReturn: true,
+      bandName: '',
       searchButton: true,
     };
   }
@@ -32,18 +38,23 @@ class Search extends React.Component {
    this.setState({ loading: true });
    searchAlbumsAPI(searchBand).then((artist) => {
      this.setState({
-       artName: searchBand,
+       bandName: searchBand,
        searchBand: '',
        loading: false,
-       returnBand: artist,
-       returnAlbum: artist.length > 0,
+       bandReturn: artist,
+       albumReturn: artist.length > 0,
      });
    });
  }
 
  render() {
-   const { searchBand,
+   const {
+     searchBand,
      searchButton,
+     loading,
+     bandReturn,
+     albumReturn,
+     bandName,
    } = this.state;
    return (
      <div data-testid="page-search">
@@ -69,6 +80,21 @@ class Search extends React.Component {
            Pesquisar
          </button>
        </form>
+       { loading ? <p>Carregando...</p> : null }
+       <div>
+         { bandName && `Resultado de álbuns de: ${bandName}` }
+         { albumReturn ? (bandReturn.map((artist) => (
+           <Link
+             key={ artist.collectionId }
+             data-testid={ `link-to-album-${artist.collectionId}` }
+             to={ `/album/${artist.collectionId}` }
+           >
+             <div>
+               { artist.collectionName }
+             </div>
+           </Link>
+         ))) : <p>Nenhum álbum foi encontrado </p>}
+       </div>
      </div>
    );
  }
