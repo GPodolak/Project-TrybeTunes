@@ -23,7 +23,7 @@ class Header extends React.Component {
     return (
       <header data-testid="header-component">
         <div>
-          {/* parte do requisito 8, lembrar depois */}
+          parte
           {userLogin ? <span data-testid="header-user-name">{ userLogin }</span>
             : (<p>Carregando...</p>)}
         </div>
@@ -44,7 +44,10 @@ class Header extends React.Component {
             <Link
               data-testid="link-to-profile"
               to="/profile"
-            />
+            >
+              Profile
+
+            </Link>
           </nav>
         </div>
       </header>
