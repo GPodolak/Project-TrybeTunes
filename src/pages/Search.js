@@ -23,9 +23,7 @@ class Search extends React.Component {
    if (searchBand < CHARACTER) {
      return this.setState({ searchButton: true });
    } return this.setState({ searchButton: false });
-   //  this.setState({
-   //    searchBand: value,
-   //    searchButton: value.length > CHARACTER,
+   // codigo construido em conjunto com jessy cristina turma 22b
  }
 
  click = (element) => {

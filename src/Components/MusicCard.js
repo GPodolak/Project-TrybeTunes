@@ -5,5 +5,10 @@
 // class MusicCard extends React.Component {
 //   constructor() {
 //     super();
+//     this.state = {
+//       FavoriteSong: false,
+//       loading: false,
+//     };
 //   }
+//   componentDidMount()
 // }
